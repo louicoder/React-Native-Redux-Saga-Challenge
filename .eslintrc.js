@@ -9,7 +9,8 @@ module.exports = {
         "react/jsx-filename-extension": "off",
         "react/prop-types": "off",
         "comma-dangle": "off",
-        "object-curly-newline": "off"
+        "object-curly-newline": "off",
+        "react/prefer-stateless-function": "off"
     },
     "globals": {
         "fetch": false
