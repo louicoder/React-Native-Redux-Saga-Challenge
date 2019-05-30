@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
 
 export default class App extends Component {
   state = {};
 
-  componentDidMount() {
-    // StatusBar.setHidden(true);
-  }
+  data = [{ id: 1, name: 'Louis' }, { id: 2, name: 'frank' }, { id: 3, name: 'Isaac' }, { id: 4, name: 'Emma' }]
 
   render() {
-    const { navigation } = this.props;
+    // const { navigation } = this.props;
     return (
       <View style={styles.container}>
-        {/* <TouchableOpacity onPress={() => navigation.navigate('Details')}>
-          <Text style={{ fontSize: 20 }}>This is the Books component</Text>
-        </TouchableOpacity> */}
-
-        <View onPress={() => alert('hello world')} style={styles.book}><Text>one</Text></View>
-        <View style={styles.book}><Text>two</Text></View>
-        <View style={styles.book}><Text>three</Text></View>
+        <FlatList
+          style={styles.list}
+          data={this.data}
+          keyExtractor={item => item.id.toString()}
+          renderItem={({ item }) => (
+            <View style={styles.book}><Text>{item.name}</Text></View>
+          )}
+        />
       </View>
     );
   }
@@ -27,19 +26,25 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    // justifyContent: 'flex-start',
     // alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-    borderWidth: 1,
+    // backgroundColor: '#F5FCFF',
+    borderWidth: 3,
     borderColor: 'green',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    // flexWrap: 'wrap',
+    // display: 'flex',
+    // width: '100%'
   },
   book: {
     borderWidth: 1,
     borderColor: 'black',
-    width: '30%',
-    height: 100,
-    margin: 5
-    // flex: '1calc()'
+    height: 200,
+    width: '33.33%',
+    // flexBasis: '33.33%',
+    padding: 3
   },
+  list: {
+    width: '100%'
+  }
 });

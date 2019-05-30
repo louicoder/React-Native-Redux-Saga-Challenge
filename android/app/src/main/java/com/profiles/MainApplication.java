@@ -1,4 +1,4 @@
-package com.profiles;
+package com.foton;
 
 import android.app.Application;
 
