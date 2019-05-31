@@ -11,7 +11,7 @@ module.exports = {
         "comma-dangle": "off",
         "object-curly-newline": "off",
         "react/prefer-stateless-function": "off",
-        "max-len": 120,
+        "max-len": "warn",
         "no-underscore-dangle": "off"
     },
     "globals": {

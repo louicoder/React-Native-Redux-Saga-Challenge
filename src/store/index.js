@@ -14,7 +14,7 @@ export default (rootReducer, rootSaga) => {
   const logger = createLogger();
   const store = createStore(rootReducer, enhancers(applyMiddleware(sagaMiddleware), applyMiddleware(logger)));
 
-  if (rootSaga) sagaMiddleware.run();
+  if (rootSaga) sagaMiddleware.run(rootSaga);
 
   return store;
 };
