@@ -3,8 +3,9 @@ import * as api from './requests';
 import * as constants from './actions';
 
 function* getBooks() {
+  console.log('we have reached here')
   try {
-    const response = yield call(api.getBooks);
+    const response = yield put(api.getBooks);
     yield put(constants.getBooksSuccess(response));
   } catch (error) {
     yield put(constants.getBooksFailed(error));
