@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Image, Text, ScrollView } from 'react-native';
+import { StyleSheet, View, Image, Text, ScrollView, TouchableWithoutFeedback } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class App extends Component {
@@ -15,7 +15,7 @@ export default class App extends Component {
             </View>
             <View style={styles.info}>
               <View style={styles.header}>
-                <Text style={{ fontSize: 22, fontWeight: 'bold', color: 'black' }}>The two surviving in the meber ssdjsd Founders</Text>
+                <Text style={{ fontSize: 26, fontWeight: 'bold', color: 'black' }}>The two surviving in the meber ssdjsd Founders</Text>
                 <View><Text>By. Arnold P. Johnson</Text></View>
               </View>
               <View style={styles.priceStarsContainer}>
@@ -30,17 +30,17 @@ export default class App extends Component {
               </View>
               <View style={styles.buy}>
                 <View style={styles.buyButton}>
-                  <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>BUY</Text>
+                  <TouchableWithoutFeedback onPress={() => alert('working')}><Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>BUY</Text></TouchableWithoutFeedback>
                 </View>
                 <View style={styles.heartIcon}>
-                  <Icon name="md-heart-empty" color="white" size={20} />
+                  <TouchableWithoutFeedback onPress={() => alert(Date.now().toString())}><Icon name="md-heart-empty" color="white" size={20} /></TouchableWithoutFeedback>
                 </View>
               </View>
             </View>
 
           </View>
 
-          <ScrollView style={{width: '100%', padding: 10 }}>
+          <ScrollView style={{ width: '100%', padding: 10 }}>
             <Text style={{ fontSize: 16 }}>
               Her cheekbones flaring scarlet as Wizard’s Castle burned, forehead drenched with azure when Munich fell to the Tank War,
               mouth touched with hot gold as a paid killer in the human system. 
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     flex: 1,
     // justifyContent: 'center',
     // alignItems: 'center',
-    backgroundColor: '#eee',
+    backgroundColor: 'white',
     // borderWidth: 1,
     // borderColor: 'black'
   },
@@ -101,8 +101,8 @@ const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: '90%',
-    // borderWidth: 1,
-    // borderColor: 'purple'
+    borderWidth: 1,
+    borderColor: 'purple'
   },
   info: {
     width: '60%',
@@ -176,9 +176,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     // borderWidth: 1,
-    backgroundColor: 'red',
+    // backgroundColor: 'red',
     height: '100%',
-    width: '19%',
+    width: '22%',
     borderRadius: 50
   }
 });

@@ -10,7 +10,9 @@ module.exports = {
         "react/prop-types": "off",
         "comma-dangle": "off",
         "object-curly-newline": "off",
-        "react/prefer-stateless-function": "off"
+        "react/prefer-stateless-function": "off",
+        "max-len": 120,
+        "no-underscore-dangle": "off"
     },
     "globals": {
         "fetch": false
