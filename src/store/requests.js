@@ -3,7 +3,7 @@ export const getBooks = async () => {
   return response;
 };
 
-export const getBook = async (query) => {
+export const getBookDetails = async (query) => {
   const response = await fetch(`${process.env.BASE_URL}?q=${query}`).then(res => res.json());
   return response;
 };

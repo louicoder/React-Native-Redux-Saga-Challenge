@@ -5,12 +5,16 @@ export const GET_BOOK_ACTION = 'GET_BOOK_ACTION';
 export const GET_BOOK_SUCCESS = 'GET_BOOK_SUCCESS';
 export const GET_BOOK_FAILURE = 'GET_BOOK_FAILURE';
 
-export const getBooks = () => ({
+export const getBooksAction = () => ({
+  type: GET_BOOKS_ACTION
+});
+
+export const getBookDetailsAction = () => ({
   type: GET_BOOKS_ACTION
 });
 
 export const getBooksSuccess = payload => ({
-  type: GET_BOOKS_ACTION,
+  type: GET_BOOKS_SUCCESS,
   payload
 });
 
@@ -19,12 +23,12 @@ export const getBooksFailed = error => ({
   error
 });
 
-export const getBookSuccess = payload => ({
+export const getBookDetailsSuccess = payload => ({
   type: GET_BOOKS_ACTION,
   payload
 });
 
-export const getBookFailed = error => ({
+export const getBookDetailsFailed = error => ({
   type: GET_BOOKS_ACTION,
   error
 });
